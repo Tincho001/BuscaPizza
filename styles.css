@@ -182,4 +182,9 @@ footer p {
   h2 {
     font-size: 18px;
   }
+  form {
+    flex-direction: column;
+    align-items: center;
+
+  }
 }

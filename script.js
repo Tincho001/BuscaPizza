@@ -108,23 +108,46 @@ let pizzas = [
 
 
 
-  function mostrarPizza() {
-    const numero = document.getElementById("elemento").value;
-  
-    if(numero < 1 || numero > pizzas.length) {
-      alert("Elige un número entre 1 y " + pizzas.length);
+
+
+//*Ejercicio Final de buscar Pizza
+// Vamos a utilizar el mismo arreglo de objetos "Pizzas🍕" del desafío general anterior.
+
+// 👉 Crear un archivo HTML que contenga un h2 , un h4 , un número de entrada y un botón .
+
+// 👉 El desafío será, al tocar el botón, capturar el valor ingresado en el input.
+// 👉 Renderizar en el h2 el nombre y en el h4 el precio de la pizza cuyo id coincide con el numero ingresado en el input.
+
+// 🚨 Si no coincide con ningún id, renderizar un mensaje de error.
+
+
+function mostrarPizza() {
+  const numero = document.getElementById("elemento").value;
+
+  if(numero < 1 || numero > pizzas.length) {
+    alert("Elige un número entre 1 y " + pizzas.length);
+  } else {
+    const pizzaSeleccion = pizzas[numero -1];
+    document.getElementById("nombre").innerText =  pizzaSeleccion.nombre; 
+    document.getElementById("precio").innerText =  `Precio: $${pizzaSeleccion.precio}`;
+    document.getElementById("ingredientes").innerText = `Ingredientes:  ${pizzaSeleccion.ingredientes}`;
+
+    if (pizzaSeleccion.img) {
+      document.getElementById("imagen").innerHTML = `<img src="${pizzaSeleccion.img}" alt="${pizzaSeleccion.nombre}" class="card-img-top">`;
     } else {
-      const pizzaSeleccion = pizzas[numero -1];
-      document.getElementById("nombre").innerText =  pizzaSeleccion.nombre; 
-      document.getElementById("precio").innerText =  `Precio: $${pizzaSeleccion.precio}`;
-      document.getElementById("ingredientes").innerText = `Ingredientes:  ${pizzaSeleccion.ingredientes}`;
-  
-      if (pizzaSeleccion.img) {
-        document.getElementById("imagen").innerHTML = `<img src="${pizzaSeleccion.img}" alt="${pizzaSeleccion.nombre}" class="card-img-top">`;
-      } else {
-        document.getElementById("imagen").innerHTML = "";
-      }
+      document.getElementById("imagen").innerHTML = "";
     }
+
+    // Agregar el resultado seleccionado al localStorage
+    localStorage.setItem("pizzaSeleccionada", JSON.stringify(pizzaSeleccion));
   }
-  
-  
+}
+
+// Recuperar la pizza seleccionada del localStorage al cargar en la página
+window.onload = function() {
+  const pizzaSeleccionada = JSON.parse(localStorage.getItem("pizzaSeleccionada"));
+  if (pizzaSeleccionada) {
+    document.getElementById("elemento").value = pizzaSeleccionada.id;
+    mostrarPizza();
+  }
+}
