@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800;900&display=swap');
+body {
+
+    background-color: #f76c10; 
+    background-image: url("/imagen/fond.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:bottom;
+    
+   
+  font-family: 'Poppins', sans-serif;
+ 
+}
+
+/* Estilos para la sección de la pizza */
+header {
+    background-color: #FDCB6E;
+    
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  header h1 {
+    font-size: 48px;
+    color: #333;
+  }
+
+img{
+
+  height: 200px;
+  width: 200px;
+  display: block; 
+  margin: 0 auto; 
+  border: 2px solid #ccc; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+  border-radius: 5px; 
+  transition: all 0.3s ease-in-out; 
+}
+
+img:hover {
+  transform: scale(1.1); 
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); 
+}
+
+
+
+
+  #typing-text {
+    font-size: 24px;
+    color: #FDCB6E;
+    font-family:'Poppins', sans-serif;
+    border-right: 2px solid #333;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(25, end), blink-caret .75s step-end infinite;
+    animation-iteration-count: infinite; 
+  }
+  
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #333 }
+  }
+  
+
+  
+.card {
+    background-color :rgb(37, 37, 37);
+    color: rgb(226, 226, 226);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+  
+    
+    max-width: 420px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+ 
+  
+  .card p {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #b98563;
+  }
+  
+  .card h3 {
+    font-size: 34px;
+    margin: 0;
+    color: #FDCB6E;
+  }
+  
+
+
+  h2 {
+    font-size: 24px;
+  }
+  
+  form {
+    width: 100%;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+  
+  }
+  
+  input[type="number"] {
+    font-size: 16px;
+    padding: 10px;
+    width: 50%;
+    box-sizing: border-box;
+    background-color: rgb(59, 59, 59);
+    color: #fff;
+ 
+
+  }
+  button {
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,209,67,1) 0%, rgba(255,145,83,1) 90% );
+    font-size: 16px;
+    padding: 12px 24px;
+    background-color: #FDCB6E;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+    color: rgb(139, 14, 14);
+  }
+  
+  
+  footer {
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,209,67,1) 0%, rgba(255,145,83,1) 90% );
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px ;
+  }
+footer p {
+
+    color: #333;
+}
+
+
+/* Estilos para pantallas grandes */
+@media screen and (min-width: 992px) {
+  h1 {
+    font-size: 48px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+}
+
+/* Estilos para pantallas medianas */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+}
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+}
